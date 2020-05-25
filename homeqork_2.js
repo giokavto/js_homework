@@ -1,74 +1,136 @@
-// lesson 2
-/*
-homework_2.js
-author: giorgi kavtaradze
-*/
 
+  let allCars = [
+    {
+        id: "audi",
+        manufacturer: "audi",
+        model: "A5",
+        color: "pink",
+        DateOfIssue: 2008,
+        price: 19000,
+    },
+    {
+        id: "mercedes",
+        manufacturer: "mercedes-benz",
+        model: "e320",
+        color: "red",
+        DateOfIssue: 2015,
+        price: 18000,
+    },
+    {
+        id: "mazda",
+        manufacturer: "mazda",
+        model: "atenza",
+        color: "black",
+        DateOfIssue: 2010,
+        price: 13000,
+    },
+    {
+        id: "bmw",
+        manufacturer: "bmw",
+        model: "m5",
+        color: "yellow",
+        DateOfIssue: 2007,
+        price: 10000,
+    },
+  ];
+  
+////////////////////////////////////////////////////////////////////////
+//start functions
 
-// homework_2.1
+function createAlert() {
+    alert();
+  }
+  /////////////////////////
+  
+  function findCardById(carId) {
+    for (let i = 0; i < allCars.length; i++) {
+      if (allCars[i].id === carId) {
+        return allCars[i];
+      }
+    }
+  }
+  
+  //////////////////////////////////
+  function getDescription(foundCar) {
+    return `ამ ავტომობილის მახასიათებლები არის:  
+            მარკა: ${foundCar.manufacturer},
+            მოდელი: ${foundCar.model},
+            ფერი: ${foundCar.color}, 
+            გამოშვების წელი: ${foundCar.DateOfIssue}, 
+            ფასი: ${foundCar.price}$`;
+  }
+  
+  ///////////////////////////////
+  function displayDescription(carId) {
+    let foundCar = findCardById(carId);
+    let description = getDescription(foundCar);
+  
+    alert(description);
+  }
+  
+  ///////////////////////////////////
+  function findPriceLessThan(price) {
+    let cars = [];
+    for (let i = 0; i < allCars.length; i++) {
+      if (price > allCars[i].price) cars.push(allCars[i]);
+    }
+    return cars;
+  }
+  ///////////////////////////////////
+  function getDescriptions(cars) {
+    let descriptions = "";
+    for (let i = 0; i < cars.length; i++) {
+      descriptions += `მარკა : ${cars[i].manufacturer} , მოდელი : ${cars[i].model} , ფასი : ${cars[i].price} \n`;
+    }
+    return descriptions;
+  }
 
-let car1 = {
-    manufacturer: "Audi",
-    model: "A4",
-    DateOfIssue: 2019,
-    price: 20000,
-}
-
-console.log(car1);
-
-let car2 = {
-    manufacturer: "mercedes-benz",
-    model: "e320",
-    DateOfIssue: 2015,
-    price: 18000,
-}
-
-// console.log(car2);
-
-let car3 = {
-    manufacturer: "mazda",
-    model: "atenza",
-    DateOfIssue: 2010,
-    price: 13000,
-}
-
-// console.log(car3);
-
-let car4 = {
-    manufacturer: "bmw",
-    model: "m5",
-    DateOfIssue: 2007,
-    price: 10000,
-}
-
+  function showPopup() {
+    let searchBar = document.getElementById("searchCars");
+    let price = searchBar.value;
+    let cars = findPriceLessThan(price);
+    let description = getDescriptions(cars);
+    if (description) {
+      alert(description);
+    } else {
+      alert("სამწუხაროდ, ამ ფასად ავტომობილს ვერ შეიძენთ");
+    }
+  }
+  
 // console.log(car4);
 
 // homework_2.1 end
 
 // homework_2.2
 
-let cars = [];
+// let cars = [];
 
-cars.push(car1);
-cars.push(car2);
-cars.push(car3);
-cars.push(car4);
+// cars.push(car1);
+// cars.push(car2);
+// cars.push(car3);
+// cars.push(car4);
+
+
+
+
+
+
 
 // console.log(cars.length)
 
-let cheapCars = [];
-let expensiveCars = [];
+// let cheapCars = [];
+// let expensiveCars = [];
 
-let listOfCheapCars = "";
-let listOfExpensiveCars = "";
+// let listOfCheapCars = "";
+// let listOfExpensiveCars = "";
 
-for(let i = 0; i < cars.length; i++){
-    if(cars[i].price < 15000){
-        listOfCheapCars = listOfCheapCars + " " + cars[i].manufacturer + ": " + cars[i].model + ", ";
-    } else{
-        listOfExpensiveCars = listOfExpensiveCars + " " + cars[i].manufacturer + ": " + cars[i].model + ", ";
-    }
-}
-console.log("You Can Buy It: " + listOfCheapCars);
+// for(let i = 0; i < cars.length; i++){
+//     if(cars[i].price < 15000){
+//         listOfCheapCars = listOfCheapCars + " " + cars[i].manufacturer + ": " + cars[i].model + ", ";
+//     } else{
+//         listOfExpensiveCars = listOfExpensiveCars + " " + cars[i].manufacturer + ": " + cars[i].model + ", ";
+//     }
+// }
+// console.log("You Can Buy It: " + listOfCheapCars);
 
-console.log("Unfortunately you can’t buy a car at this price: " + listOfExpensiveCars);
+// console.log("Unfortunately you can’t buy a car at this price: " + listOfExpensiveCars);

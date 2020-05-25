@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <title>car catalog</title>
+</head>
+<body>
+     <div class="container">
+        <div class="row d-flex justify-content-center my-4 rounded border-0 mr-3">
+        <input
+          id="searchCars"
+          class="form-control col-2 border-0 border-primary input--line"
+          type="number"
+          class="form-control-lg"
+          placeholder="ჩაწერეთ ფასი "
+          aria-label="Dollar amount (with dot and two decimal places)"
+        />
+
+        <button
+          onclick="showPopup()"
+          class="search--button rounded border-0 bg-primary text-light ml-3"
+        >
+          Search
+        </button>
+      </div>
+         <div class="row">
+             <div id="audi" class="col-3" onclick="displayDescription(this.id)">
+                <img class="w-100 h_150" src="/imges/audi.jpg" alt="img">
+                <button type="button" class="btn btn-primary w-100 margt-5">ყიდვა</button>
+             </div>
+             <div id="mercedes" class="col-3" onclick="displayDescription(this.id)">
+                <img class="w-100 h_150" src="/imges/mercedes.jpg" alt="img">
+                <button type="button" class="btn btn-primary w-100 margt-5">ყიდვა</button>
+             </div>
+             <div id="mazda" class="col-3" onclick="displayDescription(this.id)">
+                <img class="w-100 h_150" src="/imges/mazda.jpg" alt="img">
+                <button type="button" class="btn btn-primary w-100 margt-5">ყიდვა</button>
+             </div>
+             <div id="bmw" class="col-3" onclick="displayDescription(this.id)">
+                <img class="w-100 h_150" src="/imges/bmw.jpg" alt="img">
+                <button type="button" class="btn btn-primary w-100 margt-5">ყიდვა</button>
+             </div>
+         </div>
+     </div>
+
+
+
+
+
+
+    <!-- javascript -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+   <script src="homeqork_2.js"></script>
+    <!-- <link rel="stylesheet" href="homeqork_2.js"> -->
+</body>
+</html>
