@@ -97,6 +97,47 @@ function createAlert() {
     }
   }
   
+function carsPriceAverage(allCars) {
+  let sum = 0;
+  for(let i = 0; i < allCars.length; i++){
+      sum += allCars[i].price;
+  }
+  let average = sum / allCars.length;
+  return average;
+}
+
+function showCarsPriceAverage() {
+  let seachAveragePrice = document.getElementById("priceaverage");
+  let priceaverage = carsPriceAverage(allCars);
+  alert("ავტომობილების საშუალო ფასი არის" + " "+ priceaverage + "$");
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // console.log(car4);
 
 // homework_2.1 end

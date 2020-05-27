@@ -10,21 +10,40 @@
 <body>
      <div class="container">
         <div class="row d-flex justify-content-center my-4 rounded border-0 mr-3">
-        <input
-          id="searchCars"
-          class="form-control col-2 border-0 border-primary input--line"
-          type="number"
-          class="form-control-lg"
-          placeholder="შეიყვანეთ ფასი"
-          aria-label="Dollar amount (with dot and two decimal places)"
-        />
+            <input
+               id="searchCars"
+               class="form-control col-2 border-0 border-primary input--line"
+               type="number"
+               class="form-control-lg"
+               placeholder="შეიყვანეთ ფასი"
+               aria-label="Dollar amount (with dot and two decimal places)"
+             />
 
-        <button
-          onclick="showPopup()"
-          class="search--button rounded border-0 bg-primary text-light ml-3"
-        >
-          შემოწმება
-        </button>
+            <button
+               onclick="showPopup()"
+               class="search--button rounded border-0 bg-primary text-light ml-3"
+               >
+               შემოწმება
+            </button>
+            <button
+               onclick="showCarsPriceAverage()"
+               class="search--button_average rounded border-0 bg-primary text-light ml-3"
+              >
+                საშუალო ფასი
+            </button>
+            <button
+               onclick="showExpensiveCar()"
+               id = "priceaverage"
+               class="search--button_2 rounded border-0 bg-primary text-light ml-3"
+              >
+                ძვირიანი ავტომობილი
+            </button>
+            <button
+               onclick="showCheapCar()"
+               class="search--button_2 rounded border-0 bg-primary text-light ml-3"
+              >
+                იაფიანი ავტომობილი
+            </button>
       </div>
          <div class="row">
              <div id="audi" class="col-3" onclick="displayDescription(this.id)">
