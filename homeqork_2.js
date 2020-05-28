@@ -6,7 +6,7 @@
         model: "A5",
         color: "pink",
         DateOfIssue: 2008,
-        price: 19000,
+        price: 18000,
     },
     {
         id: "mercedes",
@@ -14,7 +14,7 @@
         model: "e320",
         color: "red",
         DateOfIssue: 2015,
-        price: 18000,
+        price: 20000,
     },
     {
         id: "mazda",
@@ -112,15 +112,74 @@ function showCarsPriceAverage() {
   alert("ავტომობილების საშუალო ფასი არის" + " "+ priceaverage + "$");
 }
 
+////////////////////////////////
 
+function cheapCar(allCars){
+  let minCarPrice = allCars[0].price;
+  for(let i = 1; i < allCars.length; i++){
+      if(allCars[i].price < minCarPrice){
+        minCarPrice = allCars[i];
+      }
+  }
+  return minCarPrice;
+}
 
+let cheapCarsDate = cheapCar(allCars);
 
+function getCheapCar(){
+  return `ჩვენს კატალოგში ყველაზე იაფიანი ავტომობილის მახასიათებლები არის:  
+            მარკა: ${cheapCarsDate.manufacturer},
+            მოდელი: ${cheapCarsDate.model},
+            ფერი: ${cheapCarsDate.color}, 
+            გამოშვების წელი: ${cheapCarsDate.DateOfIssue}, 
+            ფასი: ${cheapCarsDate.price}$`;
+            
+            
+}
 
+function showCheapCar() {
+  let searchCheapCar = document.getElementById("cheapCar");
+  let priceCheapcar = getCheapCar();
+  alert(priceCheapcar)
+}
 
+/////////////////////////
 
+// function expensiveCAr(allCars){
+//   let maxCarPrice = allCars[0].price;
+//   for(let i = 1; i < allCars.length; i++){
+//       if(allCars[i].price > maxCarPrice){
+//         maxCarPrice = allCars[i];
+//       }
+//   }
+//   return maxCarPrice;
+// }
+function expensivepCar(allCars){
+  let maxCarPrice = allCars[0].price;
+  for(let i = 1; i < allCars.length; i++){
+      if(allCars[i].price > maxCarPrice){
+        maxCarPrice = allCars[i];
+      }
+  }
+  return maxCarPrice;
+}
+let expensiveCarDate = expensivepCar(allCars);
+// console.log(expensiveCarDate);
 
+function getExspensiveCar(){
+  return `ჩვენს კატალოგში ყველაზე ძვიარიანი ავტომობილის მახასიათებლები არის:  
+            მარკა: ${expensiveCarDate.manufacturer},
+            მოდელი: ${expensiveCarDate.model},
+            ფერი: ${expensiveCarDate.color}, 
+            გამოშვების წელი: ${expensiveCarDate.DateOfIssue}, 
+            ფასი: ${expensiveCarDate.price}$`;
+}
 
-
+function showExpensiveCar(){
+  let searchExpensiveCar = document.getElementById("expensiveCar");
+  let priceExpensiveCar = getExspensiveCar();
+  alert(priceExpensiveCar);
+}
 
 
 
