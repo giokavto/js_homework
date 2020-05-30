@@ -43,6 +43,7 @@ function createAlert() {
   /////////////////////////
   
   function findCardById(carId) {
+    console.log("ყველა ავტომობილის მონაცემის პოვნის ღილაკი");
     for (let i = 0; i < allCars.length; i++) {
       if (allCars[i].id === carId) {
         return allCars[i];
@@ -52,6 +53,7 @@ function createAlert() {
   
   //////////////////////////////////
   function getDescription(foundCar) {
+    console.log("კონკრეტული ავტომობილების მონაცემების ამოღება, სათითაოდ");
     return `ამ ავტომობილის მახასიათებლები არის:  
             მარკა: ${foundCar.manufacturer},
             მოდელი: ${foundCar.model},
@@ -62,6 +64,7 @@ function createAlert() {
   
   ///////////////////////////////
   function displayDescription(carId) {
+    console.log("ავტომობილის სურათზე კლიკის დროს, იმავე ავტომობილის მონაცემების ალერტში გამოტანა");
     let foundCar = findCardById(carId);
     let description = getDescription(foundCar);
   
@@ -71,6 +74,7 @@ function createAlert() {
   ///////////////////////////////////
   function findPriceLessThan(price) {
     let cars = [];
+    console.log("ფასების მიხედვით ავტომობილების მონაცემების პოვნა");
     for (let i = 0; i < allCars.length; i++) {
       if (price > allCars[i].price) cars.push(allCars[i]);
     }
@@ -86,6 +90,7 @@ function createAlert() {
   }
 
   function showPopup() {
+    console.log("კონკრეტულ ფასად ავტომობილების პოვნის შემთხვევაში, ამ ავტომობილების მონაცემების დაბეჭდვა, თუ ვერ მოიძებნა ამ ფასად ავტომობილი, შესაბამისი შეტყობინების გამოტანა");
     let searchBar = document.getElementById("searchCars");
     let price = searchBar.value;
     let cars = findPriceLessThan(price);
@@ -98,6 +103,7 @@ function createAlert() {
   }
   ////////////////////////////// cars price average
 function carsPriceAverage(allCars) {
+  console.log("ბაზაში არშებული ავტომობილების, საშუალო ფასის გამოთვლა");
   let sum = 0;
   for(let i = 0; i < allCars.length; i++){
       sum += allCars[i].price;
@@ -107,6 +113,7 @@ function carsPriceAverage(allCars) {
 }
 
 function showCarsPriceAverage() {
+  console.log("ბაზაში არშებული ავტომობილების, საშუალო ფასის დაბეჭდვა");
   let seachAveragePrice = document.getElementById("priceaverage");
   let priceaverage = carsPriceAverage(allCars);
   alert("ავტომობილების საშუალო ფასი არის" + " "+ priceaverage + "$");
@@ -122,6 +129,7 @@ function enableAllBuyButtons() {
 ////////////////////////////////cheap car
 
 function cheapCar(allCars){
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე იაფიანი ავტომობილის პოვნა");
   let minCar = allCars[0];
   for(let i = 1; i < allCars.length; i++){
       if(allCars[i].price < minCar.price){
@@ -134,6 +142,7 @@ function cheapCar(allCars){
 let cheapCarsDate = cheapCar(allCars);
 
 function getCheapCar(){
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე იაფიანი ავტომობილის კონკრეტული მახასიათებლების პოვნა");
   return `ჩვენს კატალოგში ყველაზე იაფიანი ავტომობილის მახასიათებლები არის:  
             მარკა: ${cheapCarsDate.manufacturer},
             მოდელი: ${cheapCarsDate.model},
@@ -145,6 +154,7 @@ function getCheapCar(){
 }
 
 function showCheapCar() {
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე იაფიანი ავტომობილის კონკრეტული მახასიათებლების ალერტში გამოტანა");
   let searchCheapCar = document.getElementById("cheapCar");
   let priceCheapcar = getCheapCar();
   alert(priceCheapcar)
@@ -153,6 +163,7 @@ function showCheapCar() {
 /////////////////////////expensive car
 
 function expensivepCar(allCars){
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე ძვირიანი ავტომობილის პოვნა");
   let maxCar = allCars[0];
   for(let i = 1; i < allCars.length; i++){
       if(allCars[i].price > maxCar.price){
@@ -166,6 +177,7 @@ let expensiveCarDate = expensivepCar(allCars);
 // console.log(expensiveCarDate);
 
 function getExspensiveCar(){
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე ძვირიანი ავტომობილის კონკრეტული მახასიათებლების პოვნა");
   return `ჩვენს კატალოგში ყველაზე ძვიარიანი ავტომობილის მახასიათებლები არის:  
             მარკა: ${expensiveCarDate.manufacturer},
             მოდელი: ${expensiveCarDate.model},
@@ -175,10 +187,18 @@ function getExspensiveCar(){
 }
 
 function showExpensiveCar(){
+  console.log("კატალოგში არსებული ავტომობილებიდან, ყველაზე ძვირიანი ავტომობილის კონკრეტული მახასიათებლების ალერტში გამოტანა");
   let searchExpensiveCar = document.getElementById("expensiveCar");
   let priceExpensiveCar = getExspensiveCar(); 
   alert(priceExpensiveCar);
 }
+
+///////////login function
+
+function navigateToLogin() {
+  window.location = "login.html";
+}
+
 
 // function ressetBuyButtonState() {
 //   for(let i = 0; i < allCars.length; i++){
