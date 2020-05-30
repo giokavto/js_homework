@@ -96,7 +96,7 @@ function createAlert() {
       alert("სამწუხაროდ, ამ ფასად ავტომობილს ვერ შეიძენთ");
     }
   }
-  
+  ////////////////////////////// cars price average
 function carsPriceAverage(allCars) {
   let sum = 0;
   for(let i = 0; i < allCars.length; i++){
@@ -112,16 +112,23 @@ function showCarsPriceAverage() {
   alert("ავტომობილების საშუალო ფასი არის" + " "+ priceaverage + "$");
 }
 
-////////////////////////////////
+///////////////button
+function enableAllBuyButtons() {
+  for (let i = 0; i < allCars.length; i++) {
+    document.getElementById(allCars[i].id + "Button").disabled = false;
+  }
+}
+
+////////////////////////////////cheap car
 
 function cheapCar(allCars){
-  let minCarPrice = allCars[0].price;
+  let minCar = allCars[0];
   for(let i = 1; i < allCars.length; i++){
-      if(allCars[i].price < minCarPrice){
-        minCarPrice = allCars[i];
+      if(allCars[i].price < minCar.price){
+        minCar = allCars[i];
       }
   }
-  return minCarPrice;
+  return minCar;
 }
 
 let cheapCarsDate = cheapCar(allCars);
@@ -143,27 +150,19 @@ function showCheapCar() {
   alert(priceCheapcar)
 }
 
-/////////////////////////
+/////////////////////////expensive car
 
-// function expensiveCAr(allCars){
-//   let maxCarPrice = allCars[0].price;
-//   for(let i = 1; i < allCars.length; i++){
-//       if(allCars[i].price > maxCarPrice){
-//         maxCarPrice = allCars[i];
-//       }
-//   }
-//   return maxCarPrice;
-// }
 function expensivepCar(allCars){
-  let maxCarPrice = allCars[0].price;
+  let maxCar = allCars[0];
   for(let i = 1; i < allCars.length; i++){
-      if(allCars[i].price > maxCarPrice){
-        maxCarPrice = allCars[i];
+      if(allCars[i].price > maxCar.price){
+        maxCar = allCars[i];
       }
   }
-  return maxCarPrice;
+  return maxCar;
 }
 let expensiveCarDate = expensivepCar(allCars);
+
 // console.log(expensiveCarDate);
 
 function getExspensiveCar(){
@@ -177,12 +176,16 @@ function getExspensiveCar(){
 
 function showExpensiveCar(){
   let searchExpensiveCar = document.getElementById("expensiveCar");
-  let priceExpensiveCar = getExspensiveCar();
+  let priceExpensiveCar = getExspensiveCar(); 
   alert(priceExpensiveCar);
 }
 
-
-
+// function ressetBuyButtonState() {
+//   for(let i = 0; i < allCars.length; i++){
+//     let currenDiv = document.getElementById(allCars[i].id);
+//     currenDiv.querySelector("bt").disable = true;
+//   }
+// }
 
 
 
