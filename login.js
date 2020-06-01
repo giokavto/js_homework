@@ -42,22 +42,25 @@ let user1 = {
     let possibleUser = getFoundUser(users, username);
     if (!possibleUser) {
       console.log("მომხმარებელი ამ სახელით არ მოიძებნა");
+      alert("მომხმარებელი ამ სახელით არ მოიძებნა");
     } else {
       let isPasswordValid = checkPassword(possibleUser, password);
       if (isPasswordValid) {
         console.log("წარმატებით შეხვედით სისტემაში .");
+        alert("წარმატებით შეხვედით სისტემაში .");
         if (password.length < 8) {
           console.log(
             "მაგრამ თქვენ გაქვთ მარტივი პაროლი , გთხოვთ შეცვალოთ პაროლი"
           );
+          alert("მაგრამ თქვენ გაქვთ მარტივი პაროლი , გთხოვთ შეცვალოთ პაროლი");
         }
       } else {
         console.log("პაროლი არასწორია");
+        alert("პაროლი არასწორია");
       }
     }
   }
   
-//   login("katerina1989", "123884567");
 function tryLogin() {
     login("katerina1989", "123884567");
 }
