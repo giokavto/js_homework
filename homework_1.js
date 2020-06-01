@@ -17,14 +17,14 @@ author: giorgi kavtaradze
 // }
 // console.log(sum);
 
-let sum = 0;
+// let sum = 0;
 
-for(let i = 1; i < 10; i++){
-    if(i % 2 == 0){
-        sum = sum + i;
-    }
-}
-console.log(sum);
+// for(let i = 1; i < 10; i++){
+//     if(i % 2 == 0){
+//         sum = sum + i;
+//     }
+// }
+// console.log(sum);
 
 // homework 1.2
 
@@ -39,10 +39,10 @@ console.log(sum);
 // }
 // console.log(sum2);
 
-let sum2 = 0;
-for(j = 1; j < 50; j++){
-    if(j % 3 == 0){
-        sum2 = sum2 + j;
-    }
-}
-console.log(sum2);
+// let sum2 = 0;
+// for(j = 1; j < 50; j++){
+//     if(j % 3 == 0){
+//         sum2 = sum2 + j;
+//     }
+// }
+// console.log(sum2);
