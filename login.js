@@ -1,3 +1,6 @@
+// use strict-თ ჯავასკრიპტი იმოქმედებს მკაცრად განსაზღვრული პირობით
+// "use strict";
+
 let user1 = {
     username: "giorgi1994",
     password: "1423",
@@ -53,6 +56,7 @@ let user1 = {
             "მაგრამ თქვენ გაქვთ მარტივი პაროლი , გთხოვთ შეცვალოთ პაროლი"
           );
           alert("მაგრამ თქვენ გაქვთ მარტივი პაროლი , გთხოვთ შეცვალოთ პაროლი");
+          window.location = "index.html";
         }
       } else {
         console.log("პაროლი არასწორია");
@@ -62,7 +66,10 @@ let user1 = {
   }
   
 function tryLogin() {
-    login("katerina1989", "123884567");
+    let username = document.getElementById("username").value;
+    let password = document.getElementById("password").value;
+
+    login(username, password);
 }
   
 

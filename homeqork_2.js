@@ -1,3 +1,5 @@
+// use strict-თ ჯავასკრიპტი იმოქმედებს მკაცრად განსაზღვრული პირობით
+"use strict";
 
   let allCars = [
     {
@@ -41,7 +43,10 @@ function createAlert() {
     alert();
   }
   /////////////////////////
-  
+  // let carDiv = document.getElementById(allCars.id);
+  // carDiv.querySelector(`.car-tittle`).innerHTML = allCars.manufacturer;
+
+
   function findCardById(carId) {
     console.log("ყველა ავტომობილის მონაცემის პოვნის ღილაკი");
     for (let i = 0; i < allCars.length; i++) {
@@ -63,7 +68,8 @@ function createAlert() {
   }
   
   ///////////////////////////////
-  function displayDescription(carId) {
+  function displayDescription(el) {
+    let carId = el.parentNode.id;
     console.log("ავტომობილის სურათზე კლიკის დროს, იმავე ავტომობილის მონაცემების ალერტში გამოტანა");
     let foundCar = findCardById(carId);
     let description = getDescription(foundCar);
@@ -197,6 +203,14 @@ function showExpensiveCar(){
 
 function navigateToLogin() {
   window.location = "login.html";
+}
+
+let displayButton = () => {
+    for(let i = 0; i < allCars.length; i++){
+    let currenbutton = document.getElementById(allCars[i].id);
+    currenbutton.querySelector(".by-button");
+    alert("გთხოვთ დალოგინდეთ");
+  }
 }
 
 
