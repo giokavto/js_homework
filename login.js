@@ -4,26 +4,31 @@
 let user1 = {
     username: "giorgi1994",
     password: "1423",
+    email: "giorgi1994@gmail.com",
   };
   
   let user2 = {
     username: "spophia1990",
     password: "12374",
+    email: "spophia1990@gmail.com",
   };
   
   let user3 = {
-    username: "meto54",
+    username: "joni1988",
     password: "1334",
+    email: "joni1988@gmail.com",
   };
   
   let user4 = {
     username: "katerina1989",
     password: "123884567",
+    email: "katerina1989@gmail.com",
   };
   
   let user5 = {
     username: "lazare1995",
     password: "157467",
+    email: "lazare1995@gmail.com",
   };
   
   let users = [user1, user2, user3, user4, user5];
@@ -35,12 +40,30 @@ let user1 = {
       }
     }
   }
+
+  function getFoundEmail(email, possibleEmail) {
+    for (i = 0; i < users.length; i++) {
+      if (users[i].email === possibleEmail) {
+        return users[i];
+      }
+    }
+  }
   
-  function checkPassword(user, possiblePassword) {
+ let checkPassword = (user, possiblePassword) => {
     let isSame = user.password === possiblePassword;
     return isSame;
   }
   
+  //////////////////////
+  $(document).on('click', '.toggle-password', function() {
+
+    $(this).toggleClass("fa-eye fa-eye-slash");
+    
+    var input = $("#password");
+    input.attr('type') === 'password' ? input.attr('type','text') : input.attr('type','password')
+});
+////////////////////////////
+
   function login(username, password) {
     let possibleUser = getFoundUser(users, username);
     if (!possibleUser) {
@@ -65,6 +88,7 @@ let user1 = {
     }
   }
   
+
 function tryLogin() {
     let username = document.getElementById("username").value;
     let password = document.getElementById("password").value;

@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="style.css">
     <title>login</title>
 </head>
-<body>
+<body onload='document.form1.text1.focus()'>
     <div class="container">
         <form action="" class="mt-5 ">
             <input type="text" placeholder="username" class="form-inline mb-2" name="" id="username">
-            <input type="password" placeholder="password" class="form-inline mb-2" name="" id="password">
+            <input type="email" placeholder="email" class="form-inline mb-2" name="" id="email">
+            <div class="d-flex">
+                <input type="password" placeholder="password" class="form-inline mb-2" name="" id="password">
+                <span toggle="#password-field" class="fa fa-fw fa-eye field_icon toggle-password"></span>
+            </div>
+            
             <input type="button" value="login" onclick="tryLogin()" name="" id="">
         </form>
     </div>
@@ -35,6 +40,8 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/js/bootstrap.min.js" integrity="sha384-OgVRvuATP1z7JjHLkuOU7Xw704+h835Lr+6QL9UvYjZE3Ipu6Tp75j7Bh/kR0JKI" crossorigin="anonymous"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css" />
    <!-- <script src="homeqork_2.js"></script> -->
    <script src="login.js"></script>
     <!-- <link rel="stylesheet" href="homeqork_2.js"> -->
