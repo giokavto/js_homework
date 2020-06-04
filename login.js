@@ -28,7 +28,7 @@ let user1 = {
   
   let user5 = {
     username: "lazare1995",
-    password: "1574g67L%",
+    password: "4548415121",
     email: "lazare1995@gmail.com",
   };
   
@@ -62,7 +62,7 @@ let user1 = {
     let passwordStrong = /^.*(?=.*[A-Z]{1,})(?=.*[^\w]{1,})(?=.*[0-9]{1,})(?=.*[\w]).{6,20}$/;
     let possibleE = getFoundEmail(users, email);
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!possibleE ?? mailformat) {
+    if (!possibleE ?? !mailformat) {
       console.log("ამ მეილით მომხმარებელი ვერ მოიძებნა ან მეილი არასწორ ფორმატში გაქვთ შეყვანილი");
       alert("ამ მეილით მომხმარებელი ვერ მოიძებნა ან მეილი არასწორ ფორმატში გაქვთ შეყვანილი");
     } else {
