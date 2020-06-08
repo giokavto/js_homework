@@ -1,37 +1,20 @@
 // use strict-თ ჯავასკრიპტი იმოქმედებს მკაცრად განსაზღვრული პირობით
 // "use strict";
 
-let user1 = {
-    username: "giorgi1994",
-    email: "giorgi1994@gmail.com",
-    password: "1423AR$",
-    
-  };
-  
-  let user2 = {
-    username: "spophia1990",
-    password: "f12374G&",
-    email: "spophia1990@gmail.com",
-  };
-  
-  let user3 = {
-    username: "joni1988",
-    password: "e1334LJ*",
-    email: "joni1988@gmail.com",
-  };
-  
-  let user4 = {
-    username: "katerina1989",
-    password: "123884567",
-    email: "katerina1989@gmail.com",
-  };
-  
-  let user5 = {
-    username: "lazare1995",
-    password: "4548415121",
-    email: "lazare1995@gmail.com",
-  };
-  
+  class User {
+    constructor(email, username, password,){
+      this.email = email;
+      this.username = username;
+      this.password = password;
+    }
+  }
+
+  const user1 = new User("giorgi1994@gmail.com", "giorgi1994", "1423AR$",);
+  const user2 = new User("spophia1990@gmail.com", "spophia1990", "f12374G&",);
+  const user3 = new User("joni1988@gmail.com", "joni1988", "e1334LJ*",);
+  const user4 = new User("katerina1989@gmail.com", "katerina1989", "123884567",);
+  const user5 = new User("lazare1995@gmail.com", "lazare1995", "4548415121",);
+
   let users = [user1, user2, user3, user4, user5];
   
   function getFoundUser(users, possibleUsername) {
@@ -60,9 +43,11 @@ let user1 = {
 
   function login(email, password) {
     let passwordStrong = /^.*(?=.*[A-Z]{1,})(?=.*[^\w]{1,})(?=.*[0-9]{1,})(?=.*[\w]).{6,20}$/;
+    let isPassworStrong = passwordStrong.exec(password);
     let possibleE = getFoundEmail(users, email);
     let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-    if (!possibleE ?? !mailformat) {
+    let isMailformat = mailformat.exec(email);
+    if (!possibleE ?? !isMailformat) {
       console.log("ამ მეილით მომხმარებელი ვერ მოიძებნა ან მეილი არასწორ ფორმატში გაქვთ შეყვანილი");
       alert("ამ მეილით მომხმარებელი ვერ მოიძებნა ან მეილი არასწორ ფორმატში გაქვთ შეყვანილი");
     } else {
@@ -71,7 +56,7 @@ let user1 = {
         console.log("წარმატებით შეხვედით სისტემაში .");
         alert("წარმატებით შეხვედით სისტემაში .");
         window.location = "index.html";
-        if (!passwordStrong) {
+        if (!isPassworStrong) {
           console.log(
             "მაგრამ თქვენ გაქვთ მარტივი პაროლი , გთხოვთ შეცვალოთ პაროლი"
           );
