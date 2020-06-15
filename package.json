@@ -1,0 +1,16 @@
+{
+  "name": "js_homework_1",
+  "version": "1.0.0",
+  "description": "car catalog, with option to buy",
+  "main": "app.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "giorgi",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
+}
