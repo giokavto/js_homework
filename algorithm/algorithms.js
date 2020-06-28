@@ -40,9 +40,7 @@ function dfs(v){
     }
 
     let w = "";
-    ////aq vichedebit
-    /////to foreach-s for-t shevcvlit mashin mxolod sams abrunebs 5-s nacvlad
-    foreach( w in this.adj[v]) {
+    for( w in this.adj[v]) {
         if(!this.marked[w]){
             this.dfs(w);
         }
