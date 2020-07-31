@@ -1,0 +1,16 @@
+{
+  "name": "algorithm",
+  "version": "1.0.0",
+  "description": "algorithm",
+  "main": "algorithms.js",
+  "scripts": {
+    "start": "http-server"
+  },
+  "author": "Luka & Giorgi",
+  "devDependencies": {
+    "http-server": "^0.9.0"
+  },
+  "dependencies": {
+    "requirejs": "^2.3.6"
+  }
+}
