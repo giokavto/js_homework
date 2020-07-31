@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Buy Cars</title>
+    <link rel="icon" href="./imgs/samurai.jpg" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="row m-auto">
+        <h1
+          class="col-12 d-flex justify-content-center py-2 px-3 text-secondary"
+        >
+          CARS
+        </h1>
+      </div>
+
+      <div class="row d-flex justify-content-center my-4 rounded border-0 mr-3">
+        <input
+          id="searchInput"
+          class="form-control col-2 border-0 border-primary input--line"
+          type="number"
+          class="form-control"
+          placeholder="Enter the price "
+          aria-label="Dollar amount (with dot and two decimal places)"
+        />
+
+        <button
+          onclick="showPopup()"
+          class="search--button rounded border-0 bg-primary text-light ml-3"
+        >
+          Search
+        </button>
+      </div>
+
+      <div class="row">
+        <div class="col-3 card border-0">
+          <div
+            id="item1"
+            onclick="displayDescription('item1')"
+            class="card__image-holder w-100 h-75"
+          >
+            <img
+              src="./imgs/mustang1969.jpg"
+              alt="Ford Mustang 1969"
+              class="card__image"
+            />
+          </div>
+
+          <button
+            class="w-100 text-light bg-primary rounded border-0 card__button"
+          >
+            Buy
+          </button>
+        </div>
+
+        <div class="col-3 card border-0">
+          <div
+            id="item2"
+            onclick="displayDescription('item2')"
+            class="card__image-holder w-100 h-75"
+          >
+            <img
+              src="./imgs/highlander.jpg"
+              alt="Toyota Highlander"
+              class="card__image"
+            />
+          </div>
+
+          <button
+            class="w-100 text-light bg-primary rounded border-0 card__button"
+          >
+            Buy
+          </button>
+        </div>
+
+        <div class="col-3 card border-0">
+          <div
+            id="item3"
+            onclick="displayDescription('item3')"
+            class="card__image-holder w-100 h-75"
+          >
+            <img
+              src="./imgs/cls350.jpg"
+              alt="Mercedes-Benz CLS 350"
+              class="card__image"
+            />
+          </div>
+
+          <button
+            class="w-100 text-light bg-primary rounded border-0 card__button"
+          >
+            Buy
+          </button>
+        </div>
+
+        <div class="col-3 card border-0">
+          <div
+            id="item4"
+            onclick="displayDescription('item4')"
+            class="card__image-holder w-100 h-75"
+          >
+            <img
+              src="./imgs/cooper.jpg"
+              alt="Mini Cooper"
+              class="card__image"
+            />
+          </div>
+
+          <button
+            class="w-100 text-light bg-primary rounded border-0 card__button"
+          >
+            Buy
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script src="lesson4.js"></script>
+  </body>
+</html>
